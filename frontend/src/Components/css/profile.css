@@ -1,0 +1,19 @@
+.about{
+    display: flex;
+    /* justify-content: center; */
+    margin: auto;
+    padding-left: 30%;
+    align-items:flex-start;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    flex-direction: column;
+    width: 100vw;
+    height: 90vh;
+    color: rgb(221, 221, 221);
+    background-color: rgb(44, 43, 43) !important;
+}
+
+.container{
+    background-color: rgba(0, 0, 0, 0.486) !important;
+    height: 100%;
+}

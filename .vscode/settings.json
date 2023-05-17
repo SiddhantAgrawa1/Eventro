@@ -1,0 +1,30 @@
+{
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.editor.autoLockGroups": {
+        "default": true
+    },
+    "workbench.editor.closeOnFileDelete": false,
+    "workbench.preferredDarkColorTheme": "Atom One Dark",
+    "workbench.preferredHighContrastLightColorTheme": "GitHub Dark Dimmed",
+    "terminal.integrated.profiles.linux": {
+
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
+    }
+}
