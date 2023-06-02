@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Eventro/static/css/main.3aa4deba.css",
+    "main.js": "/Eventro/static/js/main.3616cb65.js",
+    "index.html": "/Eventro/index.html",
+    "main.3aa4deba.css.map": "/Eventro/static/css/main.3aa4deba.css.map",
+    "main.3616cb65.js.map": "/Eventro/static/js/main.3616cb65.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3aa4deba.css",
+    "static/js/main.3616cb65.js"
+  ]
+}
