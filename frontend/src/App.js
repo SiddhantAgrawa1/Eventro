@@ -11,6 +11,7 @@ import AddEvent from './Components/AddEvent';
 import Profile from "./Components/Profile";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import PageNotFound from "./Components/PageNotFound";
 
 
 function App() {
@@ -109,6 +110,7 @@ function App() {
           <Route exact path='/signup' element={<SignUp/>}></Route> 
           <Route exact path='/addevent' element={<AddEvent/>}></Route>
           <Route exact path='/profile' element={<Profile/>}></Route>
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
         
       </Router>

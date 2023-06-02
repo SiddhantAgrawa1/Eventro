@@ -98,7 +98,7 @@ def GetEvents():
 
     user_id = int(request.args.get('user_id'))
     page_num = int(request.args.get('page_number'))
-    n = 10
+    n = 1000
     page_size = 10
     events = get_recommended_events(user_id, n, page_num, page_size)
     # print("events : ",events)
@@ -190,9 +190,10 @@ def searchEvents():
 def protected():
     try:
         # Get the identity from the JWT token
-        user_id = get_jwt_identity()
+        username = get_jwt_identity()
+        print(username)
         # Use the user_id to retrieve the user from the database
-        current_user = db.user.find_one({'email': user_id})
+        current_user = db.user.find_one({'username': username})
         firstname = current_user['firstname']
         lastname = current_user['lastname']
         email = current_user['email']

@@ -37,21 +37,25 @@ const ExpandMore = styled((props) => {
 export default function Event({ data }) {
   let Comments = data.comments ? eval(data.comments) : []
   let Likes = data.likes ? eval(data.likes) : []
-  Likes = Likes.filter((item) => item.user_id == 1)
+  console.log(Likes)
+  let user_id = localStorage.getItem("user_id")
+  user_id = parseInt(user_id)
+  Likes = Likes.filter((item) => item.user_id == user_id)
   Likes = Likes.length ? true : false 
   const [expanded, setExpanded] = React.useState(false);
   const [comments, setComments] = React.useState(Comments);
   // const [likes, setLikes] = React.useState(Likes);
   const [newComment, setNewComment] = useState('');
+
   const [liked, setLiked] = useState(Likes);
   let date = new Date(data.createdAt * 1000).toLocaleString()
-  console.log(date,data.createdAt)
+  // console.log(date,data.createdAt)
 
   const handleLike = async() => {
     try {
       console.log("event id : ",data.event_id)
       let event_id = data.event_id
-      let user_id = 1   
+      // let user_id = 1   
       let response = await axios.post('/addLike', {
         event_id, user_id
       })
@@ -66,7 +70,7 @@ export default function Event({ data }) {
     try{
       event.preventDefault();
       let event_id = data.event_id
-      let user_id = 1
+      // let user_id = 1
       let response = await axios.post('/addComment', {
          event_id, user_id, comment : newComment
       })
@@ -105,7 +109,7 @@ export default function Event({ data }) {
       <CardMedia
         component="img"
         height="194"
-        image={`http://127.0.0.1:5000/api/uploads/${data.event_id}.jpg`}
+        image={`http://127.0.0.1:5000/api/uploads/${data.event_id%67}.jpg`}
         alt="Image"
         sx={{ px: 2 }}
       />
@@ -123,7 +127,7 @@ export default function Event({ data }) {
         <RWebShare
           data={{
             text: "Events are for everyone",
-            url: "https://on.natgeo.com/2zHaNup",
+            url: `${window.location.origin + '/event?id=' + data.event_id}`,
             title: "Eventro",
           }}
           onClick={() => console.log("shared successfully!")}
